@@ -123,16 +123,77 @@ body {
   transition: all linear 1s;
 }
 .form input {
-  margin-top: 1rem;
   display: block;
   max-width: 2rem;
 }
-.form p {
+.form p + p {
   margin-top: 1rem;
 }
 .wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
+  background-color: rgb(215, 255, 168);
+  width: 250px;
+  margin: 17px auto 5px;
+  border: 2px solid #beeec2;
+  border-radius: 1px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.number-error {
+  margin-top: 10px;
+  color: rgb(168, 18, 18);
+  font-size: 16px;
+  border: 1px solid rgb(255, 50, 50);
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  transition: all 1s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+.error {
+  visibility: visible;
+  opacity: 1;
+}
+.alert-message {
+  margin: 25px auto 0;
+  max-width: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid blue;
+  border-radius: 3px;
+  transition: all ease-in-out 1s;
+  opacity: 0;
+}
+.show {
+  opacity: 1;
+}
+.alert {
+  font-size: 22px;
+  text-align: center;
+  color: red;
+}
+.close-btn {
+  color: red;
+  border: 1px solid rgb(32, 32, 189);
+  border-radius: 5px;
+  background-color: rgb(127, 187, 255);
+  width: 30px;
+  height: 30px;
+}
+.wrapper-1 {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+.wrapper-1 label {
+  margin: 8px 0 0 5px;
+}
+.wrapper-1 input {
+  margin: 8px 0 0 5px;
 }
 .number {
   margin-left: 5px;
@@ -140,21 +201,36 @@ body {
 .user-sign {
   margin-left: 7px;
 }
-.btn {
+.btns {
+  max-width: 70px;
+  margin: 5px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.btn-general {
   display: block;
   font-size: 22px;
   font-weight: 500;
-  color: rgb(255, 91, 91);
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
   margin: 1rem auto 0;
   padding: 0.5rem;
   background-color: transparent;
-  border: 1px solid blue;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
   border-radius: 3px;
+  border: 1px solid blue;
+  background-color: rgb(61, 61, 179);
   transition: all 0.5s ease-in;
 }
-.btn:hover {
-  background-color: rgb(61, 61, 179);
+.restart {
+  color: rgb(38, 211, 153);
+}
+.btn {
+  color: rgb(255, 91, 91);
+}
+.btn:hover,
+.restart:hover {
+  background-color: rgb(132, 132, 243);
 }
 .result {
   display: none;
@@ -166,6 +242,9 @@ body {
 @media screen and (max-width: 620px) {
   .form {
     max-width: 30rem;
+  }
+  .number-error {
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 450px) {
@@ -186,5 +265,14 @@ body {
     height: 1px;
     width: 4rem;
     top: 1.7rem;
+  }
+  .alert-message {
+    max-width: 18rem;
+  }
+  .alert {
+    font-size: 1rem;
+  }
+  .number-error {
+    font-size: 0.8rem;
   }
 }

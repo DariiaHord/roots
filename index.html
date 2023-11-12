@@ -10,22 +10,97 @@
   <body>
     <section class="main">
       <h1 class="main-title">Find roots of equation <span>quickly</span></h1>
+      <div class="alert-message">
+        <p class="alert">No solutions!!! D &#60; 0</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 close-btn"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </div>
       <div class="form">
-        <label for="user-number">Place coefficients and signs:</label>
+        <p>Place coefficients and signs:</p>
         <p>Example: 5x<sup>2</sup>+3x-2</p>
         <div class="wrapper">
-          <input id="user-number" class="number-1" type="number" min="1" />
+          <input
+            id="user-number"
+            step="0.1"
+            class="number-1"
+            type="number"
+            min="1"
+            max="1000"
+          />
           <span class="number">x<sup>2</sup></span>
-          <input class="user-sign sign-1" type="text" maxlength="1" />
-          <input class="number number-2" type="number" min="1" />
+          <!-- <input class="user-sign sign-1" type="text"  --><!-- maxlength="1" /> -->
+          <div class="wrapper__radio">
+            <div class="wrapper-1">
+              <input
+                type="radio"
+                class="sign-1"
+                name="sign-1"
+                id="sign-1"
+                checked
+              />
+              <label for="sign-1">+</label>
+            </div>
+
+            <div class="wrapper-1">
+              <input type="radio" name="sign-1" id="sign-2" />
+              <label for="sign-2">-</label>
+            </div>
+          </div>
+          <input
+            class="number number-2"
+            step="0.1"
+            type="number"
+            min="1"
+            max="1000"
+          />
           <span class="number">x</span>
-          <input class="user-sign sign-2" type="text" maxlength="1" />
-          <input class="number-3 number" type="number" min="1" />
+          <!--   <input class="user-sign sign-2" type="text"  --><!-- maxlength="1" /> -->
+          <div class="wrapper__radio">
+            <div class="wrapper-1">
+              <input
+                type="radio"
+                class="sign-2"
+                name="sign-2"
+                id="sign-3"
+                checked
+              />
+              <label for="sign-3">+</label>
+            </div>
+            <div class="wrapper-1">
+              <input type="radio" name="sign-2" id="sign-4" />
+              <label for="sign-4">-</label>
+            </div>
+          </div>
+          <input
+            class="number-3 number"
+            step="0.1"
+            type="number"
+            min="1"
+            max="1000"
+          />
         </div>
         <div class="result">
-          <p>There</p>
+          <p></p>
         </div>
-        <button class="btn">Result</button>
+        <p class="number-error">
+          Check what you've typed, you have invalid value
+        </p>
+        <div class="btns">
+          <button class="btn btn-general">Result</button>
+          <button class="restart btn-general">Restart</button>
+        </div>
       </div>
     </section>
   </body>
